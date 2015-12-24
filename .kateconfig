@@ -1,0 +1,9 @@
+{
+	"name": "Rhodium Testbench",
+	"files": [{"git": 1}],
+	"build": {
+		"directory": ".",
+		"build": "dub build",
+		"clean": "dub clean"
+	}
+}

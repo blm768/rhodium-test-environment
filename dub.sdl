@@ -1,0 +1,10 @@
+name "rhodium-test-environment"
+description "A test environment for Rhodium"
+copyright "Copyright © 2015, Benjamin L. Merritt"
+authors "Benjamin L. Merritt"
+version "0.1.0"
+
+targetType "executable"
+
+dependency "rhodium" path="../rhodium"
+
