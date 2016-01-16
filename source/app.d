@@ -9,9 +9,13 @@ import rhodium.value;
 import rhodium.value.integer;
 
 void main() {
-	auto source = new SourceText("123 abc 123");
+	auto source = new SourceText("(123)");
 	auto lexer = Lexer(source);
-	auto literal = parseIntegerLiteral(lexer);
-	ValueRef!UnsignedIntegerValue value = new UnsignedIntegerValue(literal);
-	writeln(value.toUlong);
+	auto expr = parseExpression(lexer);
+	if(expr) {
+		writeln(expr.toString);
+	} else {
+		writeln(null);
+	}
 }
+
