@@ -5,15 +5,16 @@ import std.stdio;
 import rhodium.ast;
 import rhodium.lexer;
 import rhodium.parser;
+import rhodium.parser.util.inspector;
 import rhodium.value;
 import rhodium.value.integer;
 
 void main() {
-	auto source = new SourceText("(123)");
+	auto source = new SourceText("(123) + 45");
 	auto lexer = Lexer(source);
-	auto expr = parseExpression(lexer);
+	auto expr = parseLooseBinaryExpression(lexer);
 	if(expr) {
-		writeln(expr.toString);
+		write(inspect(expr));
 	} else {
 		writeln(null);
 	}
