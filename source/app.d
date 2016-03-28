@@ -10,13 +10,13 @@ import rhodium.value;
 import rhodium.value.integer;
 
 void main() {
-	auto source = new SourceText("(123 + 4) * 45 + 6 * 7");
+	auto source = new SourceText("1 = -5 + 6 * 7");
 	auto lexer = Lexer(source);
 	auto expr = parseLooseBinaryExpression(lexer);
 	if(expr) {
 		write(inspect(expr));
-	} else {
-		writeln(null);
+	}
+	if(!lexer.empty) {
+		writeln("Not an expression: ", lexer.source.text[lexer.location.offset .. $]);
 	}
 }
-
