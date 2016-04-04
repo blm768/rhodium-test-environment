@@ -10,7 +10,7 @@ import rhodium.value;
 import rhodium.value.integer;
 
 void main() {
-	auto source = new SourceText("1 = -5 + 6 * 7");
+	auto source = new SourceText("1 = -5 * 6 + 7 = 1 + 3 * 4");
 	auto lexer = Lexer(source);
 	auto expr = parseLooseBinaryExpression(lexer);
 	if(expr) {
